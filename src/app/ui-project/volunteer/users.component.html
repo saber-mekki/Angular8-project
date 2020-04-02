@@ -1,17 +1,15 @@
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
-    <div class="container-fluid">
-      <div class="header-body">
-        <div class="row">
-          
-            <h1>ثبلرثبرثبرخنو خونثبر حخنسخثبر حخنخنربخنيبخرحنيبر يبرحيخبنريبر يبرنخيحبريبر بريبنرخيبحنري يبرحنيخبريب حخنيبريبر</h1>
-          
-         
-          
-          
-        </div>
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row">
+        <h1>برشا متطوعين اختاروا باش يطوعوا معانا
+          . إذا أنت زادة تحب تعاون غيرك تنجم تتطوع معانا باش مع بعضنا نتعدوا
+          المحنة بأخف الاضرار</h1>
+          <p></p>
       </div>
     </div>
   </div>
+</div>
 <!-- Page content -->
 <div class="container-fluid mt--5">
   <!-- Table -->
@@ -20,11 +18,13 @@
       <div class="card shadow">
         <div class="card-header border-0">
           <div class="row flex-row">
-          <h3 class="mb-0">المتطوعون</h3>
-          <button class="btn btn-icon btn-2 btn-primary btn-style" data-toggle="modal" data-target="#addUser" type="button">
-              <i class="material-icons"> add</i> <p style="margin-top: 15px; margin-right: 3px;">اتطوع </p>
+            <h3 class="mb-0">المتطوعون</h3>
+            <button class="btn btn-icon btn-2 btn-primary btn-style" data-toggle="modal" data-target="#addUser"
+              type="button">
+              <i class="material-icons"> add</i>
+              <p style="margin-top: 15px; margin-right: 3px;">اتطوع </p>
             </button>
-        </div>
+          </div>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
@@ -45,16 +45,16 @@
                   </div>
                 </th>
                 <td>
-                    <span class="badge badge-dot mr-4 text-blue">
-                        <i class="bg-primary"></i> kebili
-                      </span>
+                  <span class="badge badge-dot mr-4 text-blue">
+                    <i class="bg-primary"></i> kebili
+                  </span>
                 </td>
                 <td>
-                    <div class="actions">
-                        <a href="javascript:void(0)" >
-                          <i matTooltip="logs" class="ni ni-single-copy-04 text-primary icon pt-3"></i>
-                        </a>
-                    </div>
+                  <div class="actions">
+                    <a href="javascript:void(0)">
+                      <i matTooltip="logs" class="ni ni-single-copy-04 text-primary icon pt-3"></i>
+                    </a>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -65,57 +65,57 @@
   </div>
 </div>
 <div class="modal" id="addUser">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">اتطوع</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <form [formGroup]="userForm">
-    
-              <div class="row">
-              <div class="col-md-6  form-group">
-                  <mat-form-field appearance="outline" class="input-full">
-                        <mat-label>الاسم</mat-label>
-                      <input formControlName="firstName" matInput placeholder="الاسم">
-                      <mat-error *ngIf="userForm.hasError('required', 'firstName')">عليك اضافة الاسم</mat-error>
-                    </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6  form-group">
-                  <mat-form-field appearance="outline" class="input-full">
-                        <mat-label>العنوان</mat-label>
-                      <input formControlName="lastName" matInput placeholder="العنوان">
-                      <mat-error *ngIf="userForm.hasError('required', 'lastName')"> عليك اضافة العنوان  </mat-error>
-                    </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6  form-group">
-                <mat-form-field appearance="outline" class="input-full">
-                      <mat-label>رقم الهاتف</mat-label>
-                    <input formControlName="phone" matInput placeholder="رقم الهاتف">
-                    <mat-error *ngIf="userForm.hasError('required', 'phone')">عليك اضافة رقم الهاتف </mat-error>
-                  </mat-form-field>
-            </div>
-            </div>
-           
-
-          </form>
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">اغلق</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
-        </div>
-
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">اتطوع</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form [formGroup]="userForm">
+
+          <div class="row">
+            <div class="col-md-6  form-group">
+              <mat-form-field appearance="outline" class="input-full">
+                <mat-label>الاسم</mat-label>
+                <input formControlName="firstName" matInput placeholder="الاسم">
+                <mat-error *ngIf="userForm.hasError('required', 'firstName')">عليك اضافة الاسم</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6  form-group">
+              <mat-form-field appearance="outline" class="input-full">
+                <mat-label>العنوان</mat-label>
+                <input formControlName="lastName" matInput placeholder="العنوان">
+                <mat-error *ngIf="userForm.hasError('required', 'lastName')"> عليك اضافة العنوان </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6  form-group">
+              <mat-form-field appearance="outline" class="input-full">
+                <mat-label>رقم الهاتف</mat-label>
+                <input formControlName="phone" matInput placeholder="رقم الهاتف">
+                <mat-error *ngIf="userForm.hasError('required', 'phone')">عليك اضافة رقم الهاتف </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">اغلق</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
+      </div>
+
     </div>
   </div>
+</div>

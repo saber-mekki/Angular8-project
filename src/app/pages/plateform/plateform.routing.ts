@@ -12,14 +12,14 @@ import { UsersComponent } from '../../ui-project/volunteer/users.component';
 
 export const PlateformRoutes: Routes = [
   { path: '', component: PlateformComponent, children: [
-    { path: 'containers', component: ContainersComponent },
-    { path: 'sandboxes', component: SandboxesComponent },
+    { path: '', component: ContainersComponent },
+    { path: 'donation', component: SandboxesComponent },
 
     { path: 'api-docs', component: ApiDocsComponent },
     { path: 'api-tokens', component: ApiTokensComponent },
-    { path: 'images', component: ImagesComponent },
-    { path: 'volumes', component: VolumesComponent },
-   { path: 'users', component: UsersComponent },
+    { path: 'contact-us', component: ImagesComponent },
+    { path: 'kathiya', component: VolumesComponent },
+   { path: 'volenteers', component: UsersComponent },
 
   ],
 },

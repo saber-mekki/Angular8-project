@@ -15,7 +15,7 @@ export class VolumesComponent implements OnInit {
       lastName: new FormControl('', [Validators.required]),
       firstName: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.required]),
-      cause: new FormControl('', [Validators.required]),
+      //cause: new FormControl('', [Validators.required]),
   });
 
 

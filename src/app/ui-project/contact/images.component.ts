@@ -7,11 +7,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./images.component.scss']
 })
 export class ImagesComponent implements OnInit {
- imageForm: FormGroup;
+  contactForm: FormGroup;
   constructor() {
-    this.imageForm = new FormGroup ({
-      name: new FormControl('', Validators.required),
-      registry: new FormControl('')
+    this.contactForm = new FormGroup ({
+      name: new FormControl(''),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      subject: new FormControl('', Validators.required),
+      message: new FormControl('', Validators.required),
     })
   }
 

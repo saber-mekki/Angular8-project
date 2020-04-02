@@ -1,10 +1,72 @@
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
-    <div class="container-fluid">
-      <div class="header-body">
+  <div class="container-fluid">
+    <div class="header-body">
 
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+          
+              <!-- Modal Header -->
+              <div class="card-header card-header-danger">
+                <h4 class="modal-title"></h4>
+                <p class="card-category">إذا عندك اقتراح والا تشكي ابعثلنا ميساج و احنا نجاوبوك</p>
+          
+              </div>
+          
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form [formGroup]="contactForm">
+                  <div class="row">
+                    <div class="col-md-6  form-group">
+                      <mat-form-field appearance="outline" class="input-full">
+                        <mat-label>الاسم</mat-label>
+                        <input formControlName="name" matInput placeholder="الاسم">
+                      </mat-form-field>
+                    </div>
+          
+          
+                    <div class="col-md-6  form-group">
+                      <mat-form-field appearance="outline" class="input-full">
+                        <mat-label>البريد الالكتروني</mat-label>
+                        <input formControlName="email" matInput placeholder="بريد الكتروني" required>
+                        <mat-error *ngIf="contactForm.hasError('required', 'email') || contactForm.hasError('email', 'email')">
+                          عليك اضافة بريد الكتروني</mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+          
+                  <div class="row">
+                    <div class="col-md-12  form-group">
+                      <mat-form-field appearance="outline" class="input-full">
+                        <mat-label>الموضوع</mat-label>
+                        <input formControlName="subject" matInput placeholder="الموضوع" required>
+                        <mat-error *ngIf="contactForm.hasError('required', 'subject')">عليك اضافة موضوع الرسالة</mat-error>
+                      </mat-form-field>
+                    </div>
+                  </div>
+          
+                  <div class="row">
+                      <div class="col-md-12  form-group">
+                        <mat-form-field appearance="outline" class="input-full">
+                          <mat-label>الرسالة</mat-label>
+                          <textarea matInput formControlName="message" placeholder="الرسالة" required></textarea>
+                          <mat-error *ngIf="contactForm.hasError('required', 'message')">عليك اضافة الرسالة</mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+          
+                  
+          
+                </form>
+              </div>
+               <!-- Modal footer -->
+               <div class="modal-footer">
+            
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
+                </div>
+            </div>
+          </div>
 
-
-
-      </div>
     </div>
   </div>
+</div>
+

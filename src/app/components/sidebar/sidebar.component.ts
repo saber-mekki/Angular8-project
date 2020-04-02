@@ -7,13 +7,13 @@ declare interface RouteInfo {
   class: string;
 }
 export const ROUTES: RouteInfo[] = [
-  { path: '/containers', title: 'الصفحة الرئيسية',  icon: 'ni-ungroup', class: '' },
+  { path: '/', title: 'الصفحة الرئيسية',  icon: 'ni-ungroup', class: '' },
  
-  { path: '/volumes', title: 'قضية',  icon: 'ni-app', class: '' },
+  { path: '/kathiya', title: 'قضية',  icon: 'ni-app', class: '' },
  
-  { path: '/users', title: 'متطوع',  icon: 'ni-single-02', class: '' },
-  { path: '/sandboxes', title: 'للتبرع',  icon: 'ni-sound-wave', class: '' },
-  { path: '/images', title: 'اتصل بنا',  icon: 'ni-box-2', class: '' }
+  { path: '/volenteers', title: 'متطوع',  icon: 'ni-single-02', class: '' },
+  { path: '/donation', title: 'للتبرع',  icon: 'ni-sound-wave', class: '' },
+  { path: '/contact-us', title: 'اتصل بنا',  icon: 'ni-box-2', class: '' }
 
 ];
 @Component({

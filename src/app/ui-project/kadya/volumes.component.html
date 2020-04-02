@@ -39,7 +39,7 @@
           <form [formGroup]="userForm">
     
               <div class="row">
-              <div class="col-md-6  form-group">
+              <div class="col-md-12  form-group">
                   <mat-form-field appearance="outline" class="input-full">
                         <mat-label>الاسم</mat-label>
                       <input formControlName="firstName" matInput placeholder="الاسم">
@@ -55,8 +55,6 @@
                       <mat-error *ngIf="userForm.hasError('required', 'lastName')"> عليك اضافة العنوان  </mat-error>
                     </mat-form-field>
               </div>
-            </div>
-            <div class="row">
               <div class="col-md-6  form-group">
                 <mat-form-field appearance="outline" class="input-full">
                       <mat-label>رقم الهاتف</mat-label>
@@ -66,7 +64,7 @@
             </div>
             </div>
            
-            <div class="row">
+            <!--<div class="row">
               <div class="col-md-6  form-group">
                   <mat-form-field appearance="outline" class="input-full">
                         <mat-label>سبب عدم الخروج</mat-label>
@@ -74,20 +72,13 @@
                       <mat-error *ngIf="userForm.hasError('required', 'cause')">عليك اضافة السبب</mat-error>
                     </mat-form-field>
               </div>
-            </div>
+            </div>-->
             <div class="row">
-              <div class="col-md-12">
-                <label>القضية</label>
-                <mat-form-field class="example-full-width">
+              <div class="col-md-12  form-group">
+                <mat-label>القضية</mat-label>
+                <mat-form-field appearance="outline" class="input-full">
                    <textarea matInput placeholder="شنوة توصي"></textarea>
                  </mat-form-field>
-                  <!-- <div class="form-group">
-
-                      <div class="form-group">
-                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                          <textarea class="form-control" rows="5"></textarea>
-                      </div>
-                  </div> -->
               </div>
           </div>
           </form>
