@@ -1,0 +1,123 @@
+<meta name="viewport" content="width=device-width, initial-scale=1"><div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        
+  <div class="container-fluid mt--5">
+    <div class="row">
+      <div class="col">
+     
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="card-header card-header-danger">
+          <h4 class="modal-title">قضيتك</h4>
+          <p class="card-category">قضيتك تجيك لباب دارك</p>
+       
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form [formGroup]="userForm">
+    
+              <div class="row">
+              <div class="col-md-6  form-group">
+                  <mat-form-field appearance="outline" class="input-full">
+                        <mat-label>الاسم</mat-label>
+                      <input formControlName="firstName" matInput placeholder="الاسم">
+                      <mat-error *ngIf="userForm.hasError('required', 'firstName')">عليك اضافة الاسم</mat-error>
+                    </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                  <mat-form-field appearance="outline" class="input-full">
+                        <mat-label>العنوان</mat-label>
+                      <input formControlName="lastName" matInput placeholder="العنوان">
+                      <mat-error *ngIf="userForm.hasError('required', 'lastName')"> عليك اضافة العنوان  </mat-error>
+                    </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <mat-form-field appearance="outline" class="input-full">
+                      <mat-label>رقم الهاتف</mat-label>
+                    <input formControlName="phone" matInput placeholder="رقم الهاتف">
+                    <mat-error *ngIf="userForm.hasError('required', 'phone')">عليك اضافة رقم الهاتف </mat-error>
+                  </mat-form-field>
+            </div>
+            </div>
+           
+            <div class="row">
+              <div class="col-md-6  form-group">
+                  <mat-form-field appearance="outline" class="input-full">
+                        <mat-label>سبب عدم الخروج</mat-label>
+                      <input formControlName="cause" matInput placeholder="سبب">
+                      <mat-error *ngIf="userForm.hasError('required', 'cause')">عليك اضافة السبب</mat-error>
+                    </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <label>القضية</label>
+                <mat-form-field class="example-full-width">
+                   <textarea matInput placeholder="شنوة توصي"></textarea>
+                 </mat-form-field>
+                  <!-- <div class="form-group">
+
+                      <div class="form-group">
+                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                          <textarea class="form-control" rows="5"></textarea>
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+  
+          <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

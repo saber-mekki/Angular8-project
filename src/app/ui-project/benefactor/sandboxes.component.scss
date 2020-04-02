@@ -1,0 +1,114 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.icon {
+  font-size: 19px;
+}
+.flex-table {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.flex-buttons-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+.click-icon {
+  &-play {
+    color: green;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right:2%;
+  }
+  &-pause {
+    color: orange;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right:2%;
+  }
+  &-replay {
+    color: rgb(72, 72, 255);
+    cursor: pointer;
+    font-size: 30px;
+    margin-right:2%;
+  }
+  &-stop {
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right:2%;
+  }
+  &-restart {
+    color: rgb(0, 177, 0);
+    cursor: pointer;
+    font-size: 30px;
+    margin-right:2%;
+  }
+}
+.input-full {
+  width: 100%;
+}
+.btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: transparent;
+  border-color: #6d7fe4;
+  color: #6d7fe4;
+  padding: 0px 9px;
+}
+.btn-style:hover {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #6d7fe4;
+  border-color: #6d7fe4;
+  color: white;
+  padding: 0px 9px;
+}
+::ng-deep .cdk-overlay-container {
+  position: fixed;
+  z-index: 10000000;
+}
+.add-button {
+  cursor: pointer;
+}
+.delete-button {
+  cursor: pointer;
+  font-size: 37px;
+}
+.modal-xl {
+  max-width: 1300px;
+}
+.border-style {
+  border: 1px solid #e3e3e3;
+  padding-top: 1.5%;
+  margin-right:5%;
+  margin-bottom: 1%;
+  width: 80% !important;
+}
+.second-port {
+  margin-left:-4.5%;
+}
+.style-ports {
+  display: flex;
+  align-items: center;
+}
+.bg-blue-back {
+  background-color: #6d7fe4;
+}
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: #6d7fe4 !important;
+}
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element, .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: #6d7fe4 !important;
+}

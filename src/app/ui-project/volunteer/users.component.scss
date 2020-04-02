@@ -1,0 +1,36 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.icon {
+  font-size: 19px;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.button-style {
+  font-size: 29px;
+  padding: 0px 10px;
+}
+.input-full {
+  width: 100%;
+}
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+.bg-blue-back {
+  background-color: #6d7fe4;
+}
+.btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: transparent;
+  border-color: #6d7fe4;
+  color: #6d7fe4;
+  padding: 0px 9px;
+}
