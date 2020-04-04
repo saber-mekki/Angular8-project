@@ -1,4 +1,4 @@
-import Chart from 'chart.js';
+import Chart from '../../../node_modules/chart.js';
 //
 // Chart extension for making the bars rounded
 // Code from: https://codepen.io/jedtrow/full/ygRYgo

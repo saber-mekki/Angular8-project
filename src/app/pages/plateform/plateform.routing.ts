@@ -20,7 +20,6 @@ export const PlateformRoutes: Routes = [
     { path: 'images', component: ImagesComponent },
     { path: 'volumes', component: VolumesComponent },
    { path: 'users', component: UsersComponent },
-
   ],
 },
 

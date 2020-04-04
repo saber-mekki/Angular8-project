@@ -24,7 +24,7 @@
 
 
  
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg" *ngIf="test">
       <div class="modal-content">
 
         <!-- Modal Header -->
@@ -42,8 +42,8 @@
               <div class="col-md-6  form-group">
                   <mat-form-field appearance="outline" class="input-full">
                         <mat-label>الاسم</mat-label>
-                      <input formControlName="firstName" matInput placeholder="الاسم">
-                      <mat-error *ngIf="userForm.hasError('required', 'firstName')">عليك اضافة الاسم</mat-error>
+                      <input formControlName="name" matInput placeholder="الاسم">
+                      <mat-error *ngIf="userForm.hasError('required', 'name')">عليك اضافة الاسم</mat-error>
                     </mat-form-field>
               </div>
             </div>
@@ -51,8 +51,8 @@
               <div class="col-md-6  form-group">
                   <mat-form-field appearance="outline" class="input-full">
                         <mat-label>العنوان</mat-label>
-                      <input formControlName="lastName" matInput placeholder="العنوان">
-                      <mat-error *ngIf="userForm.hasError('required', 'lastName')"> عليك اضافة العنوان  </mat-error>
+                      <input formControlName="adresse" matInput placeholder="العنوان">
+                      <mat-error *ngIf="userForm.hasError('required', 'adresse')"> عليك اضافة العنوان  </mat-error>
                     </mat-form-field>
               </div>
             </div>
@@ -60,8 +60,8 @@
               <div class="col-md-6  form-group">
                 <mat-form-field appearance="outline" class="input-full">
                       <mat-label>رقم الهاتف</mat-label>
-                    <input formControlName="phone" matInput placeholder="رقم الهاتف">
-                    <mat-error *ngIf="userForm.hasError('required', 'phone')">عليك اضافة رقم الهاتف </mat-error>
+                    <input formControlName="numero" matInput placeholder="رقم الهاتف">
+                    <mat-error *ngIf="userForm.hasError('required', 'numero')">عليك اضافة رقم الهاتف </mat-error>
                   </mat-form-field>
             </div>
             </div>
@@ -70,16 +70,16 @@
               <div class="col-md-6  form-group">
                   <mat-form-field appearance="outline" class="input-full">
                         <mat-label>سبب عدم الخروج</mat-label>
-                      <input formControlName="cause" matInput placeholder="سبب">
-                      <mat-error *ngIf="userForm.hasError('required', 'cause')">عليك اضافة السبب</mat-error>
+                      <input formControlName="raison" matInput placeholder="سبب">
+                      <mat-error *ngIf="userForm.hasError('required', 'raison')">عليك اضافة السبب</mat-error>
                     </mat-form-field>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <label>القضية</label>
-                <mat-form-field class="example-full-width">
-                   <textarea matInput placeholder="شنوة توصي"></textarea>
+                <mat-form-field class="example-full-width" >
+                   <textarea matInput placeholder="شنوة توصي" formControlName="corps"></textarea>
                  </mat-form-field>
                   <!-- <div class="form-group">
 
@@ -96,11 +96,90 @@
         <!-- Modal footer -->
         <div class="modal-footer">
   
-          <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="register()">ارسل</button>
         </div>
 
       </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- -***************************************************************thanks******** -->
+ <div class="modal-dialog modal-lg" *ngIf="!test" >
+   <div >
+  <div class="modal-content">
+    <!-- Modal Header -->
+    <div class="card-header card-header-danger">
+      <h4 class="modal-title">قضيتك</h4>
+      <p class="card-category">قضيتك تجيك لباب دارك</p>     
+   </div>
+    <!-- Modal body -->
+    <div class="modal-body"> 
+          <div class="row">
+          <div class="col-md-6  form-group">               
+                    <h4>الاسم</h4>  
+                    <h5>{{list.name}}</h5>                
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6  form-group">                
+                    <h4>العنوان</h4>     
+                    <h5>{{list.adresse}}</h5>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6  form-group">              
+                  <h4>رقم الهاتف</h4> 
+                  <h5>{{list.numero}}</h5>             
+        </div>
+        </div>          
+        <div class="row">
+          <div class="col-md-6  form-group">               
+                    <h4>سبب عدم الخروج</h4> 
+                    <h5>{{list.raison}}</h5>             
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4>القضية</h4>
+            <h5>{{list.corps}}</h5>
+              <!-- <div class="form-group">
+
+                  <div class="form-group">
+                      <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                      <textarea class="form-control" rows="5"></textarea>
+                  </div>
+              </div> -->
+          </div>
+      </div>  
+    
+    </div>
+ <!-- Modal footer -->
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-6  form-group">               
+                      <h6>شكرا , سوف نتصل بك قريبا</h6>              
+            </div>
+          </div> 
+      <button type="button" class="btn btn-primary" data-dismiss="modal" >الصفحة الرئيسة</button>
+    </div>
+
+
+ 
+  </div>
+</div>
+</div>
+<!-- ************************************ -->
   </div>
 
 

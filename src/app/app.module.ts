@@ -6,10 +6,12 @@ import { ComponentsModule } from './components/components.module';
 import { LoginModule } from './pages/login/login.module';
 import { PlateformModule } from './pages/plateform/plateform.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -17,7 +19,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PlateformModule,
     LoginModule,
     ComponentsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ChartsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

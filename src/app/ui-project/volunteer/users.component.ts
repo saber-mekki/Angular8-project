@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { VolunteerService } from 'src/app/services/volunteer.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -10,15 +12,32 @@ export class UsersComponent implements OnInit {
 userForm: FormGroup;
 hide = true;
 hideConfirm = true;
-
-  constructor() { }
+message:any;
+list:any;
+  constructor(private routr:ActivatedRoute,private router:Router,
+    private volunteerService : VolunteerService) { }
 
   ngOnInit() {
     this.userForm = new FormGroup({
-      lastName: new FormControl('', [Validators.required]),
-      firstName: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
-  });
+      name: new FormControl('', [Validators.required]),
+      adresse: new FormControl('', [Validators.required]),
+      numero: new FormControl('', [Validators.required]),
+      corps: new FormControl('', [Validators.required]),
+    });
+ this.volunteerService.getall().subscribe(
+  data=>{
+    console.log(data)
+    this.list=data;
+  } 
+ )
+ 
   }
+  register(){
+    let resp=this.volunteerService.doRegistration(this.userForm.value);
+    resp.subscribe((data)=>this.message=data);
+    console.log("good")
+ 
+ console.log("good")
 
+  }
 }
