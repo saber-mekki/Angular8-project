@@ -1,15 +1,18 @@
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
-      <div class="row">
-        <h1>برشا متطوعين اختاروا باش يطوعوا معانا
-          . إذا أنت زادة تحب تعاون غيرك تنجم تتطوع معانا باش مع بعضنا نتعدوا
-          المحنة بأخف الاضرار</h1>
-          <p></p>
+      <div class="row align-items-center">
+
+        <h1>تحب تتطوع وتكون ضمن فريقنا </h1>
+
+
+
+
       </div>
     </div>
   </div>
 </div>
+
 <!-- Page content -->
 <div class="container-fluid mt--5">
   <!-- Table -->
@@ -32,27 +35,28 @@
               <tr>
                 <th scope="col">الاسم</th>
                 <th scope="col">المدينة</th>
+                <th scope="col">كيف ستتطوع </th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr *ngFor="let list of list">
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">saber mekki</span>
+                      <span class="mb-0 text-sm">{{list.name}}</span>
                     </div>
                   </div>
                 </th>
                 <td>
                   <span class="badge badge-dot mr-4 text-blue">
-                    <i class="bg-primary"></i> kebili
+                    <i class="bg-primary"></i> {{list.adresse}}
                   </span>
                 </td>
                 <td>
                   <div class="actions">
                     <a href="javascript:void(0)">
-                      <i matTooltip="logs" class="ni ni-single-copy-04 text-primary icon pt-3"></i>
+                      <span class="mb-0 text-sm">{{list.corps}}</span>
                     </a>
                   </div>
                 </td>
@@ -82,8 +86,8 @@
             <div class="col-md-6  form-group">
               <mat-form-field appearance="outline" class="input-full">
                 <mat-label>الاسم</mat-label>
-                <input formControlName="firstName" matInput placeholder="الاسم">
-                <mat-error *ngIf="userForm.hasError('required', 'firstName')">عليك اضافة الاسم</mat-error>
+                <input formControlName="name" matInput placeholder="الاسم">
+                <mat-error *ngIf="userForm.hasError('required', 'name')">عليك اضافة الاسم</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -91,8 +95,17 @@
             <div class="col-md-6  form-group">
               <mat-form-field appearance="outline" class="input-full">
                 <mat-label>العنوان</mat-label>
-                <input formControlName="lastName" matInput placeholder="العنوان">
-                <mat-error *ngIf="userForm.hasError('required', 'lastName')"> عليك اضافة العنوان </mat-error>
+                <input formControlName="adresse" matInput placeholder="العنوان">
+                <mat-error *ngIf="userForm.hasError('required', 'adresse')"> عليك اضافة العنوان </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6  form-group">
+              <mat-form-field appearance="outline" class="input-full">
+                <mat-label>رقم الهاتف</mat-label>
+                <input formControlName="numero" matInput placeholder="رقم الهاتف">
+                <mat-error *ngIf="userForm.hasError('required', 'numero')">عليك اضافة رقم الهاتف </mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -104,18 +117,32 @@
                 <mat-error *ngIf="userForm.hasError('required', 'phone')">عليك اضافة رقم الهاتف </mat-error>
               </mat-form-field>
             </div>
+            <div class="row">
+              <div class="col-md-6  form-group">
+                <mat-form-field appearance="outline" class="input-full">
+                  <mat-label>كيف ستتطوع</mat-label>
+                  <input formControlName="corps" matInput placeholder="">
+                </mat-form-field>
+              </div>
+            </div>
+
+
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">اغلق</button>
+              <button type="button" class="btn btn-primary" (click)="register()" data-dismiss="modal">ارسل</button>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">اغلق</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
+            </div>
+
           </div>
-
-
         </form>
       </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">اغلق</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">ارسل</button>
-      </div>
-
     </div>
   </div>
 </div>
