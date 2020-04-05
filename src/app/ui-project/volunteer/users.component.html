@@ -34,7 +34,9 @@
       <div class="card shadow">
         <div class="card-header border-0">
           <div class="row flex-row">
+              
           <h3 class="mb-0">المتطوعون</h3>
+         
           <button class="btn btn-icon btn-2 btn-primary btn-style" data-toggle="modal" data-target="#addUser" type="button">
               <i class="material-icons"> add</i> <p style="margin-top: 15px; margin-right: 3px;">اتطوع </p>
             </button>
@@ -44,7 +46,9 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
+                  <th scope="col"></th>
                 <th scope="col">الاسم</th>
+                <th scope="col"></th>
                 <th scope="col">المدينة</th>
                
                 <th></th>
@@ -52,25 +56,22 @@
             </thead>
             <tbody>
               <tr *ngFor="let list of list">
+               <td></td>
                 <th scope="row">
+                 
                   <div class="media align-items-center">
                     <div class="media-body">
                       <span class="mb-0 text-sm">{{list.name}}</span>
                     </div>
                   </div>
                 </th>
+                <td></td>
                 <td>
-                    <span class="badge badge-dot mr-4 text-blue">
+                    <span class="media-body">
                         <i class="bg-primary"></i> {{list.adresse}}
                       </span>
                 </td>
-                <td>
-                    <div class="actions">
-                        <a href="javascript:void(0)" >
-                            <span class="mb-0 text-sm">{{list.corps}}</span>
-                        </a>
-                    </div>
-                </td>
+             
               </tr>
             </tbody>
           </table>
