@@ -1,6 +1,6 @@
 ***********************************
 <!-- kathyaaaaaaaa************** -->
-<div >
+<div *ngFor="let list of kadya">
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="card-header card-header-danger">
@@ -12,31 +12,31 @@
             <div class="row">
             <div class="col-md-6  form-group">               
                       <h4>الاسم</h4>  
-                      <h5>list.name</h5>                
+                      <h5>{{list.name}}</h5>                
             </div>
           </div>
           <div class="row">
             <div class="col-md-6  form-group">                
                       <h4>العنوان</h4>     
-                      <h5>list.adresse</h5>            
+                      <h5>{{list.adresse}}</h5>            
             </div>
           </div>
           <div class="row">
             <div class="col-md-6  form-group">              
                     <h4>رقم الهاتف</h4> 
-                    <h5>list.numero</h5>             
+                    <h5>{{list.numero}}</h5>             
           </div>
           </div>          
           <div class="row">
             <div class="col-md-6  form-group">               
                       <h4>سبب عدم الخروج</h4> 
-                      <h5>list.raison</h5>             
+                      <h5>{{list.raison}}</h5>             
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <h4>القضية</h4>
-              <h5>list.corps</h5>
+              <h5>{{list.corps}}</h5>
                 <!-- <div class="form-group">
   
                     <div class="form-group">
@@ -51,18 +51,23 @@
    <!-- Modal footer -->
       <div class="modal-footer">
         
-        <button type="button" class="btn btn-primary" data-dismiss="modal" >delete</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteKadya(list.id)" >delete</button>
       </div>
 
-
-
+</div>
+</div>
 
 
 
       <!-- ******************** -->
 
 
+
+
+
+
 ********************************************
+<div ngFor="let list of list">
 <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
@@ -78,31 +83,35 @@
       <tbody>
         <tr >
          <td></td>
-          <th scope="row">
-           
+          <th scope="row">          
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">list.name</span>
+                <span class="mb-0 text-sm">{{list.name}}</span>
               </div>
             </div>
           </th>
           <td></td>
           <td>
               <span class="media-body">
-                  <i class="bg-primary"></i> list.adresse
+                  <i class="bg-primary"></i> {{list.adresse}}
                 </span>
           </td>
           <td>
               <span class="media-body">
-                <button class="danger">delete</button>
-                <button>accept</button>
+                <button class="danger" (click)="deleteVolunteer(list.id)">delete</button>
+                <button (click)="updateVolunteer()">accept</button>
                 </span>
-          </td>
-       
+          </td>      
         </tr>
       </tbody>
     </table>
   </div>
+</div>
+
+
+
+
+
 
 
 ***********************************
@@ -131,8 +140,12 @@
                     </td>
                   </tr>
       </tbody>
-
 </table>
+
+
+
+
+
 *********
 <table>
     <thead class="thead-light">

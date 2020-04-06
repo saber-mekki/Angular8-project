@@ -12,10 +12,12 @@ export class KadyaService {
     return this.http.post("http://localhost:9000/kadya/save",kadya,{responseType:'text' as 'json'});
   }
 
-  public getall(kadya):Observable<any>{
-    return this.http.get("http://localhost:9000/kadya/all",kadya);  
+  public getall():Observable<any>{
+    return this.http.get("http://localhost:9000/kadya/all");  
   }
-
+public deletekadya(id:Kadya):Observable<any>{
+  return this.http.post('http://localhost:9000/kadya/delete'+id,{responseType:'text' as 'json'})
+}
 
 
 }

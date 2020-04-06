@@ -18,4 +18,12 @@ export class VolunteerService {
     return this.http.get("http://localhost:9000/volunteer/all");  
   }
 
+  public updateVolenteer(volunteer:Volunteer):Observable<Volunteer>{
+return this.http.post<Volunteer>("http://localhost:9000/volunteer/update",volunteer)
+  }
+
+  public deleteVolenteer(id:Volunteer){
+    return this.http.post("http://localhost:9000/volunteer/delete"+id,{responseType:'text' as 'json'})
+  }
+
 }
