@@ -9,6 +9,7 @@ import { ApiTokensComponent } from '../../ui-project/api-tokens/api-tokens.compo
 import { ImagesComponent } from '../../ui-project/contact/images.component';
 import { VolumesComponent } from '../../ui-project/kadya/volumes.component';
 import { UsersComponent } from '../../ui-project/volunteer/users.component';
+import { DashboardComponent } from 'src/app/ui-project/dashboard/dashboard.component';
 
 export const PlateformRoutes: Routes = [
   { path: '', component: PlateformComponent, children: [
@@ -20,6 +21,7 @@ export const PlateformRoutes: Routes = [
     { path: 'images', component: ImagesComponent },
     { path: 'volumes', component: VolumesComponent },
    { path: 'users', component: UsersComponent },
+   { path: 'admin', component: DashboardComponent },
   ],
 },
 

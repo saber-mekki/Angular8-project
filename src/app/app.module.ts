@@ -8,9 +8,11 @@ import { PlateformModule } from './pages/plateform/plateform.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { DashboardComponent } from './ui-project/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
   
   ],
   imports: [
