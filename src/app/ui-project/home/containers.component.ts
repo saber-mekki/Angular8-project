@@ -2,7 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 
 import * as CanvasJS from '../../../assets/canvasjs.min';
-export interface PeriodicElement {
+/* export interface PeriodicElement {
   name: string;
   position: number;
   weight: number;
@@ -10,8 +10,8 @@ export interface PeriodicElement {
   mort:string;
   crit:string;
   
-}
-
+} */
+/* 
 const ELEMENT_DATA: PeriodicElement[] = [
   { name: 'Tunis',position:1 , weight: 1.0079, symbol: 'H',mort:'10',crit:'50'},
   { name: 'Ben arous',position: 2, weight: 4.0026, symbol: 'He',mort:'10',crit:'50'},
@@ -40,20 +40,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 ];
 
-
+ */
 @Component({
   selector: 'app-containers',
  templateUrl: './containers.component.html',
   styleUrls: ['./containers.component.scss']
 })
 export class ContainersComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','mort','crit'];
+ /*  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','mort','crit'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-
-  applyFilter(event: Event) {
+ */
+ /*  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  } */
 
   constructor() { }
   
@@ -64,7 +64,7 @@ export class ContainersComponent implements OnInit {
         animationEnabled: true,
         exportEnabled: true,
         title:{
-          text: "الحالة الوبائية لفيروس كورونا بولاية قبلي"
+          text: "الحالة الوبائية لفيروس كورونا بتونس"
         },
         data: [{
           type: "pie",
@@ -74,8 +74,8 @@ export class ContainersComponent implements OnInit {
           dataPoints: [
             { y: 30, name: "اصابة" },
             { y: 15, name: "شفاء" },
-            { y: 100, name: "تحليل" },
-            { y:1, name: "وفايات" },
+            { y: 100, name: "وفايات" },
+            { y:1, name: " تحليل" },
    
           ]
         }]
