@@ -67,20 +67,20 @@
 
 
 ********************************************
-<div ngFor="let list of list">
+<div >
 <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
-            <th scope="col"></th>
+          <th scope="col"></th>
           <th scope="col">الاسم</th>
-          <th scope="col"></th>
           <th scope="col">المدينة</th>
-          <th scope="col"></th>
+          <th scope="col">الهاتف</th>
+          <th scope="col">كيف سيتطوع</th>
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let list of listVolunteers">
         <tr >
          <td></td>
           <th scope="row">          
@@ -90,18 +90,31 @@
               </div>
             </div>
           </th>
-          <td></td>
           <td>
               <span class="media-body">
                   <i class="bg-primary"></i> {{list.adresse}}
                 </span>
           </td>
+          <th scope="row">          
+            <div class="media align-items-center">
+              <div class="media-body">
+                <span class="mb-0 text-sm">{{list.numero}}</span>
+              </div>
+            </div>
+          </th>
+          <th scope="row">          
+            <div class="media align-items-center">
+              <div class="media-body">
+                <span class="mb-0 text-sm">{{list.corps}}</span>
+              </div>
+            </div>
+          </th>
           <td>
               <span class="media-body">
                 <button class="danger" (click)="deleteVolunteer(list.id)">delete</button>
 
                 <!-- (click)="updateVolunteer()" -->
-                <button >accept</button>
+                <button class="danger" (click)="acceptVolunteer(list.id)" >accept</button>
                 </span>
           </td>      
         </tr>

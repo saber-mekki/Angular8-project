@@ -13,7 +13,7 @@ import { KadyaService } from 'src/app/services/kadya.service';
 })
 export class DashboardComponent implements OnInit {
   userForm: FormGroup;
-  list:any;
+  listVolunteers:any;
   kadya:any;
   constructor( private kadyaService : KadyaService,private routr:ActivatedRoute,private router:Router, private volunteerService : VolunteerService) { }
 
@@ -25,12 +25,11 @@ export class DashboardComponent implements OnInit {
       raison: new FormControl('', [Validators.required]),
       corps: new FormControl('', [Validators.required]),
     });
-    this.volunteerService.getall().subscribe(
+    
+    this.volunteerService.getNonAcceptedYet().subscribe(
       data=>{
-      
-        this.list=data;
-      } 
-     )
+        this.listVolunteers=data;
+      })
      
  this.kadyaService.getall().subscribe(
    data=>{
@@ -59,8 +58,8 @@ deleteKadya(id){
 
 }
 
-updateVolunteer(volunteer){
-this.volunteerService.updateVolenteer(volunteer).subscribe(
+acceptVolunteer(id){
+this.volunteerService.updateVolenteer(id).subscribe(
   (response)=>{
     
   }
