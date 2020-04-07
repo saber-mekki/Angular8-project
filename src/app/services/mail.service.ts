@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,6 +10,8 @@ export class MailService {
   constructor(private http:HttpClient) { }
 
   public sendContactMail(message){
-    return this.http.post("http://localhost:9000/mail/contactMail",message)
-}
+    const header = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post("http://localhost:9000/mail/contactMail",message, {headers: header})
+  }
+
 }

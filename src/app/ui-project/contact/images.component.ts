@@ -24,8 +24,9 @@ export class ImagesComponent implements OnInit {
 
   send(){
     if(this.contactForm.status=="VALID"){
-      let message=[this.contactForm.value["name"],this.contactForm.value["subject"],this.contactForm.value["email"],this.contactForm.value["message"]]
-      this.mailService.sendContactMail(message)
+      let message=[this.contactForm.value.name,this.contactForm.value.subject,this.contactForm.value.email,this.contactForm.value.message]
+      this.mailService.sendContactMail(message).subscribe()
+      this.ngOnInit()
     }
     
   }
