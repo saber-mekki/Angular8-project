@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { DashboardComponent } from './ui-project/dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,10 @@ import { DashboardComponent } from './ui-project/dashboard/dashboard.component';
     ComponentsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    
     
   ],
   providers: [],

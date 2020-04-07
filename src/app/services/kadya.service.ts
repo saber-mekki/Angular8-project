@@ -15,8 +15,8 @@ export class KadyaService {
   public getall():Observable<any>{
     return this.http.get("http://localhost:9000/kadya/all");  
   }
-public deletekadya(id:Kadya):Observable<any>{
-  return this.http.post('http://localhost:9000/kadya/delete'+id,{responseType:'text' as 'json'})
+public deletekadya(id):Observable<any>{
+  return this.http.get('http://localhost:9000/kadya/delete/'+id,{responseType:'text' as 'json'})
 }
 
 

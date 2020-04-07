@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MailService } from 'src/app/services/mail.service';
 
 @Component({
   selector: 'app-images',
@@ -8,7 +9,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ImagesComponent implements OnInit {
   contactForm: FormGroup;
-  constructor() {
+  constructor( private mailService: MailService) {
+    
+  }
+
+  ngOnInit() {
     this.contactForm = new FormGroup ({
       name: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -17,7 +22,12 @@ export class ImagesComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
+  send(){
+    if(this.contactForm.status=="VALID"){
+      let message=[this.contactForm.value["name"],this.contactForm.value["subject"],this.contactForm.value["email"],this.contactForm.value["message"]]
+      this.mailService.sendContactMail(message)
+    }
+    
   }
-
+  
 }

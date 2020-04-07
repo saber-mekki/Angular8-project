@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VolunteerService } from 'src/app/services/volunteer.service';
 import { KadyaService } from 'src/app/services/kadya.service';
+import { StatistiqueService } from 'src/app/services/statistique.service';
 
 
 @Component({
@@ -12,19 +13,28 @@ import { KadyaService } from 'src/app/services/kadya.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userForm: FormGroup;
+  //userForm: FormGroup;
   listVolunteers:any;
   kadya:any;
-  constructor( private kadyaService : KadyaService,private routr:ActivatedRoute,private router:Router, private volunteerService : VolunteerService) { }
+  SatistiqueForm: FormGroup;
+
+  constructor( private kadyaService : KadyaService,private routr:ActivatedRoute,private router:Router, private volunteerService : VolunteerService, private statistiqueService: StatistiqueService) { }
 
   ngOnInit() {
-    this.userForm = new FormGroup({
+    this.SatistiqueForm = new FormGroup({
+      contamination: new FormControl('', [Validators.required]),
+      healing: new FormControl('', [Validators.required]),
+      analyse: new FormControl('', [Validators.required]),
+      death: new FormControl('', [Validators.required]),
+    });
+
+    /*this.userForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       adresse: new FormControl('', [Validators.required]),
       numero: new FormControl('', [Validators.required]),
       raison: new FormControl('', [Validators.required]),
       corps: new FormControl('', [Validators.required]),
-    });
+    });*/
     
     this.volunteerService.getNonAcceptedYet().subscribe(
       data=>{
@@ -33,7 +43,7 @@ export class DashboardComponent implements OnInit {
      
  this.kadyaService.getall().subscribe(
    data=>{
-this.kadya=data;
+     this.kadya=data;
    }
  )
 
@@ -60,10 +70,14 @@ deleteKadya(id){
 
 acceptVolunteer(id){
 this.volunteerService.updateVolenteer(id).subscribe(
-  (response)=>{
-    
-  }
-)
+  (response)=>{})
+    }
+
+
+save(){
+  if(this.SatistiqueForm.status=="VALID"){
+  this.statistiqueService.enregister(this.SatistiqueForm.value).subscribe()
+  this.ngOnInit()}
 }
 
 }

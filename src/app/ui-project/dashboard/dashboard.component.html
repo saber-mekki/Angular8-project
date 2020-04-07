@@ -1,294 +1,261 @@
 ***********************************
 <!-- kathyaaaaaaaa************** -->
-<div *ngFor="let list of kadya">
-    <div class="modal-content">
-      <!-- Modal Header -->
-      <div class="card-header card-header-danger">
-        <h4 class="modal-title">قضيتك</h4>
-        <p class="card-category">قضيتك تجيك لباب دارك</p>     
-     </div>
-      <!-- Modal body -->
-      <div class="modal-body"> 
-            <div class="row">
-            <div class="col-md-6  form-group">               
-                      <h4>الاسم</h4>  
-                      <h5>{{list.name}}</h5>                
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6  form-group">                
-                      <h4>العنوان</h4>     
-                      <h5>{{list.adresse}}</h5>            
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6  form-group">              
-                    <h4>رقم الهاتف</h4> 
-                    <h5>{{list.numero}}</h5>             
-          </div>
-          </div>          
-          <div class="row">
-            <div class="col-md-6  form-group">               
-                      <h4>سبب عدم الخروج</h4> 
-                      <h5>{{list.raison}}</h5>             
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h4>القضية</h4>
-              <h5>{{list.corps}}</h5>
-                <!-- <div class="form-group">
-  
-                    <div class="form-group">
-                        <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                        <textarea class="form-control" rows="5"></textarea>
-                    </div>
-                </div> -->
-            </div>
-        </div>  
-      
-      </div>
-   <!-- Modal footer -->
-      <div class="modal-footer">
-        
-        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteKadya(list.id)" >delete</button>
-      </div>
-
-</div>
-</div>
-
-
-
-      <!-- ******************** -->
-
-
-
-
-
-
-********************************************
-<div >
-<div class="table-responsive">
+<div>
+  <div class="table-responsive">
     <table class="table align-items-center table-flush">
       <thead class="thead-light">
         <tr>
           <th scope="col"></th>
           <th scope="col">الاسم</th>
-          <th scope="col">المدينة</th>
+          <th scope="col">العنوان</th>
           <th scope="col">الهاتف</th>
-          <th scope="col">كيف سيتطوع</th>
+          <th scope="col"> القضية</th>
           <th></th>
         </tr>
       </thead>
-      <tbody *ngFor="let list of listVolunteers">
-        <tr >
-         <td></td>
-          <th scope="row">          
+      <tbody *ngFor="let kad of kadya">
+          <td></td>
+          <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">{{list.name}}</span>
+                <span class="mb-0 text-sm">{{kad.name}}</span>
               </div>
             </div>
           </th>
           <td>
-              <span class="media-body">
-                  <i class="bg-primary"></i> {{list.adresse}}
-                </span>
+            <span class="media-body">
+              <i class="bg-primary"></i> {{kad.adresse}}
+            </span>
           </td>
-          <th scope="row">          
+          <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">{{list.numero}}</span>
+                <span class="mb-0 text-sm">{{kad.numero}}</span>
               </div>
             </div>
           </th>
-          <th scope="row">          
+          <th scope="row">
             <div class="media align-items-center">
               <div class="media-body">
-                <span class="mb-0 text-sm">{{list.corps}}</span>
+                <span class="mb-0 text-sm">{{kad.corps}}</span>
               </div>
             </div>
           </th>
           <td>
-              <span class="media-body">
-                <button class="danger" (click)="deleteVolunteer(list.id)">delete</button>
-
-                <!-- (click)="updateVolunteer()" -->
-                <button class="danger" (click)="acceptVolunteer(list.id)" >accept</button>
-                </span>
-          </td>      
-        </tr>
+            <button type="button" class="btn btn-primary"
+              (click)="deleteKadya(kad.id)">delete</button>
+          </td>
+        
       </tbody>
     </table>
   </div>
-</div>
 
 
-
-
-
-
-
-***********************************
-<table>
-    <thead class="thead-light">
-        <tr>
-            <th>اصابة</th>
-            <th>شفاء</th>
-            <th> تحليل </th>
-            <th>الوفايات</th>
-          </tr>
-      </thead>
-      <tbody>
+  ********************************************
+  <div>
+    <div class="table-responsive">
+      <table class="table align-items-center table-flush">
+        <thead class="thead-light">
           <tr>
-              <th scope="row">
-                <input>
-                </th>
-                <td>
-                  <input>
-                </td>
-                <td>
-                    <input>
-                  </td>
-                  <td>
-                      <input>
-                    </td>
-                  </tr>
-      </tbody>
-</table>
+            <th scope="col"></th>
+            <th scope="col">الاسم</th>
+            <th scope="col">المدينة</th>
+            <th scope="col">الهاتف</th>
+            <th scope="col">كيف سيتطوع</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let list of listVolunteers">
+          <tr>
+            <td></td>
+            <th scope="row">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <span class="mb-0 text-sm">{{list.name}}</span>
+                </div>
+              </div>
+            </th>
+            <td>
+              <span class="media-body">{{list.adresse}} </span>
+            </td>
+            <th scope="row">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <span class="mb-0 text-sm">{{list.numero}}</span>
+                </div>
+              </div>
+            </th>
+            <th scope="row">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <span class="mb-0 text-sm">{{list.corps}}</span>
+                </div>
+              </div>
+            </th>
+            <td>
+              <span class="media-body">
+                <button  class="btn btn-primary" (click)="deleteVolunteer(list.id)">delete</button>
+
+                <!-- (click)="updateVolunteer()" -->
+                <button  class="btn btn-primary" (click)="acceptVolunteer(list.id)">accept</button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  ***********************************
+  <!-- Statistiques -->
+  <form [formGroup]="SatistiqueForm">
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <input type="text" placeholder="اصابة" formControlName="contamination" required="required">
+      </div>
+
+      <div class="col-md-12">
+        <input type="text" placeholder="شفاء" formControlName="healing" required>
+      </div>
+
+      <div class="col-md-12">
+        <input type="text"  placeholder="تحليل" formControlName="analyse" required>
+      </div>
+
+      <div class="col-md-12">
+        <input type="text"  placeholder="الوفايات" formControlName="death" required>
+      </div>
+    </div>
+
+    <button  class="btn btn-primary" (click)="save()">save</button>
+  </form>
 
 
 
 
 
-*********
-<table>
+  <!--  *********
+  <table>
     <thead class="thead-light">
-    <tr>
-    <th>الولاية</th>
-    <th>الاصابات الجديدة</th>
-    <th> الحالات الحرجة</th>
-    <th>الوفايات</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <th scope="row">
-<h4>Tunis</h4>
-<h4>Ben arous</h4>
-<h4>Manoub</h4>
-<h4>Nabeul</h4>
-<h4>Sousse</h4>
-<h4>Beja</h4>
-<h4>Gafsa</h4>
-<h4>Kbili</h4>
-<h4>Tozeur</h4>
-<h4>Gabes</h4>
-<h4>Mednine</h4>
-<h4>Tatawine</h4>
-<h4>Selyana</h4>
-<h4>SidiBouzid</h4>
-<h4>Sfax</h4>
-<h4>Benzart</h4>
-<h4>Kasrine</h4>
-<h4>Kef</h4>
-<h4>Jandouba</h4>
-<h4>Kairouan</h4>
-<h4>Beja</h4>
-<h4>Zagouan</h4>
-</th>
-<td>
+      <tr>
+        <th>الولاية</th>
+        <th>الاصابات الجديدة</th>
+        <th> الحالات الحرجة</th>
+        <th>الوفايات</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <h4>Tunis</h4>
+          <h4>Ben arous</h4>
+          <h4>Manoub</h4>
+          <h4>Nabeul</h4>
+          <h4>Sousse</h4>
+          <h4>Beja</h4>
+          <h4>Gafsa</h4>
+          <h4>Kbili</h4>
+          <h4>Tozeur</h4>
+          <h4>Gabes</h4>
+          <h4>Mednine</h4>
+          <h4>Tatawine</h4>
+          <h4>Selyana</h4>
+          <h4>SidiBouzid</h4>
+          <h4>Sfax</h4>
+          <h4>Benzart</h4>
+          <h4>Kasrine</h4>
+          <h4>Kef</h4>
+          <h4>Jandouba</h4>
+          <h4>Kairouan</h4>
+          <h4>Beja</h4>
+          <h4>Zagouan</h4>
+        </th>
+        <td>
 
 
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  <input>
-  
-</td>
-<td>
-   
-    
-   
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-  
-</td>
-<td>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
 
-    
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-    <input>
-</td>
-</tr>
-</tbody>
+        </td>
+        <td>
 
 
 
-</table>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+
+        </td>
+        <td>
+
+
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+          <input>
+        </td>
+      </tr>
+    </tbody>
 
 
 
-
-
-
-
-
+  </table>-->
