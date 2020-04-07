@@ -1,7 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import * as CanvasJS from '../../../assets/canvasjs.min';
+import { StatistiqueService } from 'src/app/services/statistique.service';
 /* export interface PeriodicElement {
   name: string;
   position: number;
@@ -43,50 +44,49 @@ const ELEMENT_DATA: PeriodicElement[] = [
  */
 @Component({
   selector: 'app-containers',
- templateUrl: './containers.component.html',
+  templateUrl: './containers.component.html',
   styleUrls: ['./containers.component.scss']
 })
 export class ContainersComponent implements OnInit {
- /*  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','mort','crit'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
- */
- /*  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  } */
 
-  constructor() { }
+  satistique: any;
+
+  constructor(private statService: StatistiqueService) {
+    
+   }
+
+  ngOnInit() {
+    this.statService.getStat().subscribe(
+      data =>{
+        this.satistique=data
+        let chart = new CanvasJS.Chart("chartContainer", {
+          theme: "light2",
+          animationEnabled: true,
+          exportEnabled: true,
+          title: {
+            text: "الحالة الوبائية لفيروس كورونا بتونس"
+          },
+          data: [{
+            type: "pie",
+            showInLegend: true,
+            toolTipContent: "<b>{name}</b>: {y} ",
+            indexLabel: "{name} - {y}",
+            dataPoints: [
+              { y: this.satistique[0].contamination, name: "اصابة" },
+              { y: this.satistique[0].healing, name: "شفاء" },
+              { y: this.satistique[0].death, name: "وفايات" },
+              { y: this.satistique[0].analyse, name: " تحليل" },
+    
+            ]
+          }]
+        });
+    
+        chart.render();
+      }
+    )
+  }
+
   
-  ngOnInit() {	
-    
-     let chart = new CanvasJS.Chart("chartContainer", {
-        theme: "light2",
-        animationEnabled: true,
-        exportEnabled: true,
-        title:{
-          text: "الحالة الوبائية لفيروس كورونا بتونس"
-        },
-        data: [{
-          type: "pie",
-          showInLegend: true,
-          toolTipContent: "<b>{name}</b>: {y} ",
-          indexLabel: "{name} - {y}",
-          dataPoints: [
-            { y: 30, name: "اصابة" },
-            { y: 15, name: "شفاء" },
-            { y: 100, name: "وفايات" },
-            { y:1, name: " تحليل" },
-   
-          ]
-        }]
-      });
-        
-      chart.render();
-        
-    
-   
-
-    
-  }}
+}
 
 
