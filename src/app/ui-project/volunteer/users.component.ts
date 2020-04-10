@@ -26,7 +26,7 @@ list:any;
     });
  this.volunteerService.getall().subscribe(
   data=>{
-    console.log(data)
+    
     this.list=data;
   } 
  )
