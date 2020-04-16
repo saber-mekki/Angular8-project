@@ -20,7 +20,7 @@ import { NotfoundComponent } from './ui-project/notfound/notfound.component';
   
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     PlateformModule,
     LoginModule,
