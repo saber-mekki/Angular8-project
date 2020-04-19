@@ -20,7 +20,7 @@ export const PlateformRoutes: Routes = [
     { path: 'contact', component: ImagesComponent },
     { path: 'kadya', component: VolumesComponent },
    { path: 'volunteer', component: UsersComponent },
-   { path: 'admin', component: DashboardComponent },
+   { path: '1/2/3/4/5/6/7/8/9/admin', component: DashboardComponent },
    { path: '**', component: NotfoundComponent },
   ],
 },
