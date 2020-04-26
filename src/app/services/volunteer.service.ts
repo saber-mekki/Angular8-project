@@ -27,7 +27,7 @@ export class VolunteerService {
   }
 
   public deleteVolenteer(id){
-    return this.http.post("http://localhost:9000/volunteer/delete/"+id,{responseType:'text' as 'json'})
+    return this.http.post("http://92.222.67.238:9000/volunteer/delete/"+id,{responseType:'text' as 'json'})
   }
 
 }
