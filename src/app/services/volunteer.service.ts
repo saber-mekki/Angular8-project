@@ -12,22 +12,22 @@ export class VolunteerService {
 
 
   public doRegistration(volunteer):Observable<any>{
-    return this.http.post("http://localhost:9000/volunteer/save",volunteer,{responseType:'text' as 'json'});
+    return this.http.post("http://92.222.67.238:9000/volunteer/save",volunteer,{responseType:'text' as 'json'});
   }
   public getall():Observable<any>{
-    return this.http.get("http://localhost:9000/volunteer/all");  
+    return this.http.get("http://92.222.67.238:9000/volunteer/all");  
   }
 
   public getNonAcceptedYet():Observable<any>{
-    return this.http.get("http://localhost:9000/volunteer/nonAcceptedYet"); 
+    return this.http.get("http://92.222.67.238:9000/volunteer/nonAcceptedYet"); 
   }
 
   public updateVolenteer(id){
-    return this.http.get("http://localhost:9000/volunteer/accept/"+id)
+    return this.http.get("http://92.222.67.238:9000/volunteer/accept/"+id)
   }
 
   public deleteVolenteer(id){
-    return this.http.post("http://localhost:9000/volunteer/delete/"+id,{responseType:'text' as 'json'})
+    return this.http.post("http://92.222.67.238:9000/volunteer/delete/"+id,{responseType:'text' as 'json'})
   }
 
 }

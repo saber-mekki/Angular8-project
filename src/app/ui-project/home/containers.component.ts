@@ -2,7 +2,9 @@ import { Component, OnInit, } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 import * as CanvasJS from '../../../assets/canvasjs.min';
+
 import { StatistiqueService } from 'src/app/services/statistique.service';
+
 /* export interface PeriodicElement {
   name: string;
   position: number;
@@ -49,11 +51,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ContainersComponent implements OnInit {
 
+
   satistique: any;
 
   constructor(private statService: StatistiqueService) {
     
    }
+
 
   ngOnInit() {
     this.statService.getStat().subscribe(

@@ -11,7 +11,7 @@ export class MailService {
 
   public sendContactMail(message){
     const header = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post("http://92.222.67.238:9000/mail/contactMail",message, {headers: header})
+    return this.http.post("'http://92.222.67.238:4000/mail/contactMail",message, {headers: header})
   }
 
 }

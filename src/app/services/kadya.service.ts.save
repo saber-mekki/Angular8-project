@@ -9,14 +9,14 @@ export class KadyaService {
 
   constructor(private http:HttpClient) { }
   public doRegistration(kadya):Observable<any>{
-    return this.http.post("http://92.222.67.238:9000/kadya/save",kadya,{responseType:'text' as 'json'});
+    return this.http.post("http://localhost:9000/kadya/save",kadya,{responseType:'text' as 'json'});
   }
 
   public getall():Observable<any>{
-    return this.http.get("http://92.222.67.238:9000/kadya/all");  
+    return this.http.get("http://localhost:9000/kadya/all");  
   }
 public deletekadya(id):Observable<any>{
-  return this.http.get('http://92.222.67.238:9000/kadya/delete/'+id,{responseType:'text' as 'json'})
+  return this.http.get('http://localhost:9000/kadya/delete/'+id,{responseType:'text' as 'json'})
 }
 
 

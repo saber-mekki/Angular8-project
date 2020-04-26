@@ -10,15 +10,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { DashboardComponent } from './ui-project/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NotfoundComponent } from './ui-project/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    NotfoundComponent,
   
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     PlateformModule,
     LoginModule,

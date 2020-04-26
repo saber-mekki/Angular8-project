@@ -17,14 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/docker-sandboxer-front",
+            "outputPath": "dist/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
+              "src/apple-icon-57x57.png",
               "src/assets"
             ],
             "styles": [
@@ -32,11 +32,11 @@
               "src/assets/scss/argon.scss"
             ],
             "scripts": [
-            "node_modules/chart.js/dist/Chart.min.js",
-            "node_modules/clipboard/dist/clipboard.min.js",
-            "node_modules/jquery/dist/jquery.min.js",
-            "./node_modules/popper.js/dist/umd/popper.min.js",
-            "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/chart.js/dist/Chart.min.js",
+              "node_modules/clipboard/dist/clipboard.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -96,7 +96,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
+              "src/apple-icon-57x57.png",
               "src/assets"
             ],
             "styles": [
@@ -129,8 +129,27 @@
               "devServerTarget": "docker-sandboxer-front:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "docker-sandboxer-front"
 }
